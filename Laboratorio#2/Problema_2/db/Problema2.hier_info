@@ -1,0 +1,14 @@
+|sumador1
+inA => Sum1.IN0
+inA => Cout.IN0
+inA => Cout.IN0
+inB => Sum1.IN1
+inB => Cout.IN1
+inB => Cout.IN0
+Cin => Sum1.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Sum1 <= Sum1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
