@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu Aug 24 15:06:31 2023
+Fitter Status : Successful - Thu Aug 24 23:15:41 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : Problema_2
 Top-level Entity Name : Fulladder_4
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 8 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 7 / 32,070 ( < 1 % )
 Total registers : 0
 Total pins : 23 / 457 ( 5 % )
 Total virtual pins : 0
