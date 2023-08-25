@@ -1,0 +1,65 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/simulation/modelsim
+vbin_to_BCD
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1692938525
+!i10b 1
+!s100 9eO4EZ07?WlGI>U1E[D>K3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IMDk2HC:fQjLjZ;^Aa7Jd91
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z4 w1692906822
+8C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD.sv
+FC:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD.sv
+!i122 0
+L0 1 43
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1692938524.000000
+!s107 C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1|C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1
+Z8 tCvgOpt 0
+nbin_to_@b@c@d
+vbin_to_BCD_tb
+R1
+!s110 1692938526
+!i10b 1
+!s100 NPbViBS@iGifak;_P38gK0
+R2
+IF_1o]7Ek1_1I3^XJ87Uob3
+R3
+S1
+R0
+R4
+8C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD_tb.sv
+FC:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD_tb.sv
+!i122 1
+L0 1 28
+R5
+r1
+!s85 0
+31
+!s108 1692938525.000000
+!s107 C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1|C:/Users/Saul/Desktop/Proyectos/sgomez_digital_design_lab_2023/Laboratorio#2/Problema_1/bin_to_BCD_tb.sv|
+!i113 1
+R6
+R7
+R8
+nbin_to_@b@c@d_tb
