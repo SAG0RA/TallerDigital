@@ -4,6 +4,8 @@ module paramCalculator
 	(
 	
 	input		logic		[3 : 0]    Z, Y		,	// switches: [6, 9] => Z, [0, 3] => Y 
+	
+	input		logic		[1 : 0]    mode		,	// switches: 4 y 5 para elegir modo de operacion 
 		
 	input		logic				     btn_change,	// button KEY0
 	
@@ -13,41 +15,26 @@ module paramCalculator
 	
 	);
 	
-	
-	logic 	[3 : 0]	counter;
-		
-	
-	always @* begin
-	
-		
-		// Si el boton se presiona, cambia al siguiente modo de operacion.
-		
-		if (btn_change == 1b'1) begin	
-	
-			if (counter == 4b'1011) 
-				counter = 4b'0000;
 			
-			else
-				counter = counter + 1;
-		end
+	
+	always_comb begin
+	
 		
-		else begin
-		
-			case (counter)
-				
-				1	:	begin
-							
-							out = Z + Y;
+		case ({btn_change, mode})
+			
+			{1'b0, 2'b00}	:	begin
 						
-						end
-						
-				default:	
+										out = Z + Y;
+										$display ("Resultado ADD: %b", out);
+										
+										end
 					
-					out = 0;
+			default:	
+				
+				out = 0;
+		
+		endcase
 			
-			endcase
-			
-		end
 
 	end
 	
