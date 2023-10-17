@@ -1,0 +1,50 @@
+module testbench;
+  reg clk;
+  reg reset;
+  wire [2:0] A, B, C;
+  
+  // Instancia del módulo bajo prueba
+  RandomNumberGenerator dut (
+    .clk(clk),
+    .reset(reset),
+    .A(A),
+    .B(B),
+    .C(C)
+  );
+
+  // Simulación de reloj
+  always begin
+    #5 clk = ~clk;
+  end
+
+  initial begin
+    // Inicialización de señales
+    clk = 0;
+    reset = 0;
+    
+    // Reset durante 10 ciclos de reloj
+    reset = 1;
+    #10 reset = 0;
+
+    // Realizar algunas iteraciones
+    for (int i = 0; i < 10; i = i + 1) begin
+      #10;
+      $display("Cycle %0d: A = %0d, B = %0d, C = %0d", i, A, B, C);
+    end
+
+    // Finalizar la simulación
+    $finish;
+  end
+endmodule
+
+// Ejecutar el testbench
+initial begin
+  $dumpfile("dump.vcd");
+  $dumpvars(0, testbench);
+  $display("Starting simulation...");
+  $monitor($time, " ns", " - reset = %b, clk = %b - A = %0d, B = %0d, C = %0d", reset, clk, A, B, C);
+  $display("\n");
+  $finish;
+end
+
+

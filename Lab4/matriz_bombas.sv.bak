@@ -1,0 +1,42 @@
+module matriz_bombas (
+  input [5:0] num_bombs,        // Entrada: número binario de 6 dígitos
+  output logic [7:0][7:0] m_board,  // Salida: matriz de 8x8 inicializada a ceros
+  output logic [7:0][7:0] m_bombs,  // Salida: matriz de bombas
+  output logic [7:0][7:0] m_num_bombs // Salida: matriz de número de bombas adyacentes
+);
+
+initial begin
+  // Inicializar m_board a ceros
+  for (int i = 0; i < 8; i = i + 1) begin
+    for (int j = 0; j < 8; j = j + 1) begin
+      m_board[i][j] = 8'b00000000;
+    end
+  end
+
+  // Generar m_bombs con N cantidad de 1's en posiciones aleatorias
+  for (int n = 0; n < num_bombs; n = n + 1) begin
+    int x = $random % 8;
+    int y = $random % 8;
+    m_bombs[x][y] = 1'b1;
+  end
+end
+
+always_comb begin
+  // Calcular m_num_bombs basado en bombas adyacentes
+  for (int i = 0; i < 8; i = i + 1) begin
+    for (int j = 0; j < 8; j = j + 1) begin
+      int count = 0;
+      if (i > 0 && m_bombs[i-1][j]) count = count + 1;
+      if (i < 7 && m_bombs[i+1][j]) count = count + 1;
+      if (j > 0 && m_bombs[i][j-1]) count = count + 1;
+      if (j < 7 && m_bombs[i][j+1]) count = count + 1;
+      if (i > 0 && j > 0 && m_bombs[i-1][j-1]) count = count + 1;
+      if (i > 0 && j < 7 && m_bombs[i-1][j+1]) count = count + 1;
+      if (i < 7 && j > 0 && m_bombs[i+1][j-1]) count = count + 1;
+      if (i < 7 && j < 7 && m_bombs[i+1][j+1]) count = count + 1;
+      m_num_bombs[i][j] = count;
+    end
+  end
+end
+
+endmodule

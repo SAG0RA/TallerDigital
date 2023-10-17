@@ -13,13 +13,13 @@ module paramCalculator
 	input		logic		[1 : 0]    btn_change,	// button KEY0
 	
 	output   logic    [6 : 0]    segA, segB,  // 7 segmentos
-										  segD,
+										  segD
 										  
-	output   logic    [N-1 : 0]  aritm_out  
+	//output   logic    [N-1 : 0]  aritm_out  
 			
 	);
 	
-	//logic    [N-1 : 0]    aritm_out;		// Resultado de operaciones aritmetricas
+	logic    [N-1 : 0]    aritm_out;		// Resultado de operaciones aritmetricas
 	
 	logic    [N : 0]      temp_out;		// Variable temporal para verificar overflow
 		

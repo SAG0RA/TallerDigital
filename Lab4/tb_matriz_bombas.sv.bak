@@ -1,0 +1,58 @@
+module tb_matriz_bombas;
+
+  reg [5:0] num_bombs;
+  logic [7:0][7:0] m_board;
+  logic [7:0][7:0] m_bombs;
+  logic [7:0][7:0] m_num_bombs;
+  
+  matriz_bombas uut (
+    .num_bombs(num_bombs),
+    .m_board(m_board),
+    .m_bombs(m_bombs),
+    .m_num_bombs(m_num_bombs)
+  );
+  
+  initial begin
+    num_bombs = 6'b001010; // Número binario equivalente a 10
+
+    // Simulación durante 10 unidades de tiempo
+    #10;
+    
+    // Imprimir las matrices
+    $display("Matriz de tablero:");
+    for (int i = 0; i < 8; i = i + 1) begin
+      for (int j = 0; j < 8; j = j + 1) begin
+        $write("%b ", m_board[i][j]);
+      end
+      $display(""); // Nueva fila
+    end
+    
+    $display("Matriz de bombas:");
+    for (int i = 0; i < 8; i = i + 1) begin
+      for (int j = 0; j < 8; j = j + 1) begin
+        $write("%b ", m_bombs[i][j]);
+      end
+      $display(""); // Nueva fila
+    end
+    
+    $display("Matriz de números de bombas adyacentes:");
+    for (int i = 0; i < 8; i = i + 1) begin
+      for (int j = 0; j < 8; j = j + 1) begin
+        $write("%b ", m_num_bombs[i][j]);
+      end
+      $display(""); // Nueva fila
+    end
+    
+    $finish;
+  end
+endmodule
+
+module matriz_bombas (
+  input [5:0] num_bombs,
+  output logic [7:0][7:0] m_board,
+  output logic [7:0][7:0] m_bombs,
+  output logic [7:0][7:0] m_num_bombs
+);
+  // El código del módulo matriz_bombas va aquí
+endmodule
+

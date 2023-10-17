@@ -1,0 +1,95 @@
+// Módulo controlador de VGA
+
+//module VGA_Controller (
+//    input logic CLK, RST,
+//    output logic VCLK, HSYNC, VSYNC, BLANK, SYNC,
+//    output logic [7:0] R, G, B
+//);
+
+`timescale 1ns / 1ps
+
+// image generator of a road and a sky 640x480 @ 60 fps
+
+////////////////////////////////////////////////////////////////////////
+module VGA_Controller(
+	input CLK,           // 50 MHz
+	output HSYNC,      // horizontal sync
+	output VSYNC,	     // vertical sync
+	output [7:0] R,
+	output [7:0] B,
+	output [7:0] G  
+);
+
+	reg [9:0] counter_x = 0;  // horizontal counter
+	reg [9:0] counter_y = 0;  // vertical counter
+	reg [7:0] r_red = 0;
+	reg [7:0] r_blue = 0;
+	reg [7:0] r_green = 0;
+	
+	reg RST = 0;  // for PLL
+	
+	wire clk25MHz;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// CLK divider 50 MHz to 25 MHz
+	clock_divider ip1(
+		.areset(RST),
+		.inclk0(CLK),
+		.c0(clk25MHz),
+		.locked()
+		);  
+	// end CLK divider 50 MHz to 25 MHz
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// counter and sync generation
+	always @(posedge clk25MHz)  // horizontal counter
+		begin 
+			if (counter_x < 799)
+				counter_x <= counter_x + 1;  // horizontal counter (including off-screen horizontal 160 pixels) total of 800 pixels 
+			else
+				counter_x <= 0;              
+		end  // always 
+	
+	always @ (posedge clk25MHz)  // vertical counter
+		begin 
+			if (counter_x == 799)  // only counts up 1 count after horizontal finishes 800 counts
+				begin
+					if (counter_y < 525)  // vertical counter (including off-screen vertical 45 pixels) total of 525 pixels
+						counter_y <= counter_y + 1;
+					else
+						counter_y <= 0;              
+				end  // if (counter_x...
+		end  // always
+	// end counter and sync generation  
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// hsync and vsync output assignments
+	assign HSYNC = (counter_x >= 0 && counter_x < 96) ? 1:0;  // hsync high for 96 counts                                                 
+	assign VSYNC = (counter_y >= 0 && counter_y < 2) ? 1:0;   // vsync high for 2 counts
+	// end hsync and vsync output assignments
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// pattern generate
+		
+		// pattern generate
+	always @(posedge CLK)
+	begin
+		 // Set the entire screen to white
+		 r_red <= 8'hF;
+		 r_blue <= 8'hF;
+		 r_green <= 8'hF;
+	end
+// end pattern generate
+
+						
+	// end pattern generate
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// color output assignments
+	// only output the colors if the counters are within the adressable video time constraints
+	assign R = (counter_x > 144 && counter_x <= 783 && counter_y > 35 && counter_y <= 514) ? r_red : 8'h0;
+	assign B = (counter_x > 144 && counter_x <= 783 && counter_y > 35 && counter_y <= 514) ? r_blue : 8'h0;
+	assign G = (counter_x > 144 && counter_x <= 783 && counter_y > 35 && counter_y <= 514) ? r_green : 8'h0;
+	// end color output assignments
+	
+endmodule  // VGA_image_gen
