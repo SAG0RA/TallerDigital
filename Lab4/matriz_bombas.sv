@@ -9,6 +9,7 @@ module matriz_bombas (
   input integer condicion_victoria, // Declaración de condición victoria
   input integer movimiento, //jugada 
   input integer posicion_x, //coordenada en x
+  output bit tablero_victoria [7:0][7:0], // Declaración de la matriz tablero_victoria como una salida
   input integer posicion_y //coordenada en y
 );
 
@@ -23,7 +24,7 @@ function automatic void crear_tablero(output integer tablero [7:0][7:0]);
   end
 endfunction
 
-function void insertar_bombas(output bit m_bombas [7:0][7:0], input int num_bombas);
+function void insertar_bombas(output bit m_bombas [7:0][7:0],output bit tablero_victoria [7:0][7:0], input int num_bombas);
 
   automatic integer bombs_placed = 0; // Declarar 'bombs_placed' como automatic
   $display("El valor de num_bombas es %d", num_bombas); // Imprimir el valor de num_bombas
@@ -31,12 +32,12 @@ function void insertar_bombas(output bit m_bombas [7:0][7:0], input int num_bomb
     for (int j = 0; j < 8; j = j + 1) begin
       if (bombs_placed < num_bombas) begin
         m_bombas[i][j] = 1'b1; // Agregar una bomba
-		  
+		  tablero_victoria[i][j] = 1'b1; // Agregar una bomba
         bombs_placed = bombs_placed + 1;
         $display("Colocando bomba en (%0d, %0d)", i, j);
       end else begin
         m_bombas[i][j] = 1'b0; // Agregar un 0
-		  
+		  tablero_victoria[i][j] = 1'b0; // Agregar un 0
       end
     end
   end
@@ -100,7 +101,7 @@ function void verificar_tablero_victoria(input bit tablero_victoria[7:0][7:0], i
   integer i, j;
   for (i = 0; i < 8; i = i + 1) begin
     for (j = 0; j < 8; j = j + 1) begin
-      if (tablero_victoria[i][j] != 1) begin
+      if (tablero_victoria[i][j] != 1'b1) begin
 		$display("Encontrado 0, ¡siga jugando!");
         return; // No todas las celdas son 1, no cambiamos condicion_victoria
       end
@@ -117,6 +118,7 @@ endfunction
 
 function void realizar_movimiento(
   inout integer tablero[7:0][7:0],
+  inout bit tablero_victoria[7:0][7:0],
   input bit m_bombas[7:0][7:0],
   input integer m_perimetro[7:0][7:0],
   input integer movimiento,
@@ -131,16 +133,16 @@ function void realizar_movimiento(
       if (m_bombas[posicion_x][posicion_y] == 1'b0) begin
         if (m_perimetro[posicion_x][posicion_y] == 0) begin
           tablero[posicion_x][posicion_y] = 9; // Poner 9 en tablero si m_perimetro es 0
-			 
+			 tablero_victoria[posicion_x][posicion_y] = 1'b1;
         end else begin
           tablero[posicion_x][posicion_y] = m_perimetro[posicion_x][posicion_y]; // Copiar m_perimetro a tablero
-			 
+			 tablero_victoria[posicion_x][posicion_y] = 1'b1;
         end
       end
     end
   end else if (movimiento == 2) begin
     tablero[posicion_x][posicion_y] = -2; // Colocar -2 en tablero
-	 
+	 tablero_victoria[posicion_x][posicion_y] = 1'b1;
   end
 endfunction
 

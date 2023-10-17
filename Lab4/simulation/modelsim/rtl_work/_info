@@ -11,53 +11,53 @@ cModel Technology
 Z0 dC:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/simulation/modelsim
 vmatriz_bombas
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1697554337
+!s110 1697557332
 !i10b 1
-!s100 S7LdX@H7;O]dYCjDR^oIn2
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I;@W[iK_R^VhOKLk1LFkYV2
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 zn1a8A;@fB6671V[LU7?<3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IGI4^=b;kj2g`;zY8]P8oo1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1697554298
+w1697556898
 8C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/matriz_bombas.sv
 FC:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/matriz_bombas.sv
 !i122 0
-L0 1 148
-Z5 OV;L;2020.1;71
+L0 1 150
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1697554337.000000
+Z5 !s108 1697557332.000000
 !s107 C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/matriz_bombas.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4|C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/matriz_bombas.sv|
 !i113 1
-Z7 o-sv -work work
-Z8 !s92 -sv -work work {+incdir+C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4}
-Z9 tCvgOpt 0
+Z6 o-sv -work work
+Z7 !s92 -sv -work work {+incdir+C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4}
+Z8 tCvgOpt 0
 vtb_matriz_bombas
 R1
-R2
+!s110 1697557333
 !i10b 1
-!s100 4A?Ja[RFB9N8i1dEc^TgY1
+!s100 V=YOJ7be9mS8X2=KFX?EK2
+R2
+IbHRm0ziXFdZCdM5Xl]TFL3
 R3
-IKS5WkMzl<YYgB2ike6`o:1
-R4
 S1
 R0
-w1697553996
+w1697557292
 8C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/tb_matriz_bombas.sv
 FC:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/tb_matriz_bombas.sv
 !i122 1
-L0 1 191
-R5
+L0 1 215
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/tb_matriz_bombas.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4|C:/Users/kejor/OneDrive/Documentos/2S 2023/Taller/Lab4/tb_matriz_bombas.sv|
 !i113 1
+R6
 R7
 R8
-R9

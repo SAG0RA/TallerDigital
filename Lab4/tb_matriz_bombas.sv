@@ -11,12 +11,13 @@ module tb_matriz_bombas;
   integer movimiento = 0;
   integer posicion_x = 0;
   integer posicion_y = 0;
-  
+  bit tablero_victoria [7:0][7:0]; // Declaración de la matriz tablero_victoria
   
 
   // Instanciar el módulo matriz_bombas
   matriz_bombas matriz_bombas_inst (
     .m_bombas(m_bombas), // Conectar la matriz m_bombas
+	 .tablero_victoria(tablero_victoria),
     .m_perimetro(m_perimetro), // Conectar la matriz m_perimetro
 	 .casillas_libres(casillas_libres), // Conectar la salida de casillas_libres
 	 .posibles_bombas(posibles_bombas) // Conectar posibles_bombas
@@ -27,7 +28,7 @@ module tb_matriz_bombas;
     matriz_bombas_inst.crear_tablero(tablero);
 	 
     // Llamamos a la función insertar_bombas y pasamos num_bombas como argumento
-    matriz_bombas_inst.insertar_bombas(m_bombas, num_bombas);
+    matriz_bombas_inst.insertar_bombas(m_bombas,tablero_victoria, num_bombas);
 
     // Llamamos a la función bombas_encontradas
     matriz_bombas_inst.bombas_encontradas(m_bombas, m_perimetro);
@@ -61,6 +62,15 @@ module tb_matriz_bombas;
       end
       $display(""); // Cambiar de línea para la siguiente fila
     end
+	 
+	     // Mostrar la matriz tablero_victoria
+    $display("Matriz tablero_victoria:");
+    for (i = 0; i < 8; i = i + 1) begin
+      for (j = 0; j < 8; j = j + 1) begin
+        $write("%b ", tablero_victoria[i][j]);
+      end
+      $display(""); // Cambiar de línea para la siguiente fila
+    end
 
     // Mostrar la matriz m_perimetro
     $display("Matriz m_perimetro:");
@@ -84,7 +94,7 @@ module tb_matriz_bombas;
     // ...
 
     // Llamar a la función realizar_movimiento con las variables inicializadas
-    matriz_bombas_inst.realizar_movimiento(tablero, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
+    matriz_bombas_inst.realizar_movimiento(tablero,tablero_victoria, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
 
     // Mostrar la matriz tablero después de la primera prueba
     $display("Resultado de la primera prueba:");
@@ -104,7 +114,7 @@ module tb_matriz_bombas;
     // ...
 
     // Llamar a la función realizar_movimiento con las variables inicializadas
-    matriz_bombas_inst.realizar_movimiento(tablero, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
+    matriz_bombas_inst.realizar_movimiento(tablero,tablero_victoria, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
 
     // Mostrar la matriz tablero después de la segunda prueba
     $display("Resultado de la segunda prueba:");
@@ -124,7 +134,7 @@ module tb_matriz_bombas;
     // ...
 
     // Llamar a la función realizar_movimiento con las variables inicializadas
-    matriz_bombas_inst.realizar_movimiento(tablero, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
+    matriz_bombas_inst.realizar_movimiento(tablero,tablero_victoria, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
 
     // Mostrar la matriz tablero después de la tercera prueba
     $display("Resultado de la tercera prueba:");
@@ -144,7 +154,7 @@ module tb_matriz_bombas;
     // ...
 
     // Llamar a la función realizar_movimiento con las variables inicializadas
-    matriz_bombas_inst.realizar_movimiento(tablero, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
+    matriz_bombas_inst.realizar_movimiento(tablero,tablero_victoria, m_bombas, m_perimetro, movimiento, posicion_x, posicion_y);
 
     // Mostrar la matriz tablero después de la cuarta prueba
     $display("Resultado de la cuarta prueba:");
@@ -157,6 +167,16 @@ module tb_matriz_bombas;
 
 
 ///////
+    // Mostrar la matriz tablero_victoria, después de la cuarta prueba
+    $display("impresión la matriz tablero_victoria:");
+    for (int i = 0; i < 8; i = i + 1) begin
+      for (int j = 0; j < 8; j = j + 1) begin
+        $write("%b ", tablero_victoria[i][j]);
+      end
+      $display(""); // Cambiar de línea para la siguiente fila
+    end
+	 
+	 
 	     // Mostrar el valor de posibles_bombas después de llamar a la función
     $display("Valor de posibles_bombas después de llamar a la función: %d", posibles_bombas);
 	 
@@ -176,8 +196,12 @@ module tb_matriz_bombas;
     // Llamar a la función para verificar el tablero y actualizar condicion_victoria
     matriz_bombas_inst.verificar_tablero_y_actualizar(tablero, condicion_victoria);
 	 
+
 	 
+    // Llama a la función verificar_tablero_victoria
+    matriz_bombas_inst.verificar_tablero_victoria(tablero_victoria, condicion_victoria);
 	 
+	
 	 
 	 
 
