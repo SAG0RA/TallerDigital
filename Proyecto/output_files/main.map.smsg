@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at ram.sv(18): always construct contains both blocking and non-blocking assignments File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/ram.sv Line: 18
+Warning (10273): Verilog HDL warning at decoder.sv(27): extended using "x" or "z" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder.sv Line: 27
+Warning (10273): Verilog HDL warning at decoder.sv(40): extended using "x" or "z" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder.sv Line: 40
+Warning (10273): Verilog HDL warning at extend.sv(12): extended using "x" or "z" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/extend.sv Line: 12

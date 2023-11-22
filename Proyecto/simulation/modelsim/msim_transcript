@@ -1,0 +1,51 @@
+# Reading pref.tcl
+# do main_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/saulg/Downloads/Proyecto\ temp\ -\ pruebas/Archivos/Procesador {C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:28:53 on Nov 21,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador" C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder.sv 
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+# End time: 11:28:53 on Nov 21,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/saulg/Downloads/Proyecto\ temp\ -\ pruebas/Archivos/Procesador {C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:28:53 on Nov 21,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador" C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder_tb.sv 
+# -- Compiling module decoder_tb
+# 
+# Top level modules:
+# 	decoder_tb
+# End time: 11:28:53 on Nov 21,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  decoder_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" decoder_tb 
+# Start time: 11:28:53 on Nov 21,2023
+# Loading sv_std.std
+# Loading work.decoder_tb
+# Loading work.decoder
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# End time: 11:33:31 on Nov 21,2023, Elapsed time: 0:04:38
+# Errors: 0, Warnings: 0

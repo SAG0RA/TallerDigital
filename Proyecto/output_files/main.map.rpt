@@ -1,0 +1,859 @@
+Analysis & Synthesis report for main
+Tue Nov 21 17:44:06 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Parameter Settings for User Entity Instance: clock25mh:clock|contador_parametrizable:divisor_clock
+  6. Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_horizontal:contador_horizontal|contador_parametrizable:contador
+  7. Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_horizontal:contador_horizontal|comparador_igual:comparador_igual
+  8. Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_vertical:contador_vertical|contador_parametrizable:contador
+  9. Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_vertical:contador_vertical|comparador_igual:comparador_igual
+ 10. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hfront_porch
+ 11. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hsync
+ 12. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hback_porch
+ 13. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vfront_porch
+ 14. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vsync
+ 15. Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vback_porch
+ 16. Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_direccion:contador
+ 17. Parameter Settings for User Entity Instance: rom:rom_image
+ 18. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|controller:c|condlogic:cl|flopenr:flagreg1
+ 19. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|controller:c|condlogic:cl|flopenr:flagreg0
+ 20. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:pcmux
+ 21. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|flopr:pcreg
+ 22. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|adder:pcadd1
+ 23. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|adder:pcadd2
+ 24. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:ra1mux
+ 25. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:ra2mux
+ 26. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:resmux
+ 27. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:srcbmux
+ 28. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|alu:alu
+ 29. Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|alu:alu|AluAritmetic:arithmetics
+ 30. Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|mux2:ra1mux"
+ 31. Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|adder:pcadd2"
+ 32. Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|adder:pcadd1"
+ 33. Port Connectivity Checks: "Proce:procesador"
+ 34. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vback_porch"
+ 35. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vsync"
+ 36. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vfront_porch"
+ 37. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hback_porch"
+ 38. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hsync"
+ 39. Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hfront_porch"
+ 40. Port Connectivity Checks: "controlador_vga:controlador|contador_vertical:contador_vertical|comparador_igual:comparador_igual"
+ 41. Port Connectivity Checks: "controlador_vga:controlador|contador_vertical:contador_vertical"
+ 42. Port Connectivity Checks: "controlador_vga:controlador|contador_horizontal:contador_horizontal|comparador_igual:comparador_igual"
+ 43. Port Connectivity Checks: "controlador_vga:controlador|contador_horizontal:contador_horizontal"
+ 44. Port Connectivity Checks: "clock25mh:clock|contador_parametrizable:divisor_clock"
+ 45. Analysis & Synthesis Messages
+ 46. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Tue Nov 21 17:44:06 2023           ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; main                                        ;
+; Top-level Entity Name       ; main                                        ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; main               ; main               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock25mh:clock|contador_parametrizable:divisor_clock ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; n              ; 2     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_horizontal:contador_horizontal|contador_parametrizable:contador ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                     ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_horizontal:contador_horizontal|comparador_igual:comparador_igual ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_vertical:contador_vertical|contador_parametrizable:contador ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                       ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_vertical:contador_vertical|comparador_igual:comparador_igual ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                  ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hfront_porch ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                       ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hsync ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hback_porch ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vfront_porch ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                       ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vsync ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vback_porch ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlador_vga:controlador|contador_direccion:contador ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:rom_image ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; ADDR_WIDTH     ; 16    ; Signed Integer                    ;
+; DATA_WIDTH     ; 24    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|controller:c|condlogic:cl|flopenr:flagreg1 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|controller:c|condlogic:cl|flopenr:flagreg0 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:pcmux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|flopr:pcreg ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|adder:pcadd1 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|adder:pcadd2 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:ra1mux ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:ra2mux ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:resmux ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|mux2:srcbmux ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|alu:alu ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Proce:procesador|arm:arm|datapath:dp|alu:alu|AluAritmetic:arithmetics ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|mux2:ra1mux" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; d1   ; Input ; Info     ; Stuck at VCC                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|adder:pcadd2" ;
++----------+-------+----------+-------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                         ;
++----------+-------+----------+-------------------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                                    ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                                    ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                                    ;
++----------+-------+----------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Proce:procesador|arm:arm|datapath:dp|adder:pcadd1" ;
++----------+-------+----------+-------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                         ;
++----------+-------+----------+-------------------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                                    ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                                    ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                                    ;
++----------+-------+----------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Proce:procesador"                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; WriteData ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DataAdr   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; MemWrite  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vback_porch" ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                        ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+; b[8..5] ; Input ; Info     ; Stuck at VCC                                                                                   ;
+; b[3..2] ; Input ; Info     ; Stuck at VCC                                                                                   ;
+; b[1..0] ; Input ; Info     ; Stuck at GND                                                                                   ;
+; b[9]    ; Input ; Info     ; Stuck at GND                                                                                   ;
+; b[4]    ; Input ; Info     ; Stuck at GND                                                                                   ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vsync" ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                  ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+; b[8..5] ; Input ; Info     ; Stuck at VCC                                                                             ;
+; b[9]    ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[4]    ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[3]    ; Input ; Info     ; Stuck at VCC                                                                             ;
+; b[2]    ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[1]    ; Input ; Info     ; Stuck at VCC                                                                             ;
+; b[0]    ; Input ; Info     ; Stuck at GND                                                                             ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_vfront_porch" ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+; b[8..5] ; Input ; Info     ; Stuck at VCC                                                                                    ;
+; b[4..0] ; Input ; Info     ; Stuck at GND                                                                                    ;
+; b[9]    ; Input ; Info     ; Stuck at GND                                                                                    ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hback_porch" ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                        ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+; b[7..4] ; Input ; Info     ; Stuck at VCC                                                                                   ;
+; b[3..0] ; Input ; Info     ; Stuck at GND                                                                                   ;
+; b[9]    ; Input ; Info     ; Stuck at VCC                                                                                   ;
+; b[8]    ; Input ; Info     ; Stuck at GND                                                                                   ;
++---------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hsync" ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                  ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+; b[6..5] ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[3..0] ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[9]    ; Input ; Info     ; Stuck at VCC                                                                             ;
+; b[8]    ; Input ; Info     ; Stuck at GND                                                                             ;
+; b[7]    ; Input ; Info     ; Stuck at VCC                                                                             ;
+; b[4]    ; Input ; Info     ; Stuck at VCC                                                                             ;
++---------+-------+----------+------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hfront_porch" ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+; b[6..0] ; Input ; Info     ; Stuck at GND                                                                                    ;
+; b[9]    ; Input ; Info     ; Stuck at VCC                                                                                    ;
+; b[8]    ; Input ; Info     ; Stuck at GND                                                                                    ;
+; b[7]    ; Input ; Info     ; Stuck at VCC                                                                                    ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|contador_vertical:contador_vertical|comparador_igual:comparador_igual" ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                          ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------+
+; a[3..2] ; Input ; Info     ; Stuck at VCC                                                                                     ;
+; a[8..4] ; Input ; Info     ; Stuck at GND                                                                                     ;
+; a[9]    ; Input ; Info     ; Stuck at VCC                                                                                     ;
+; a[1]    ; Input ; Info     ; Stuck at GND                                                                                     ;
+; a[0]    ; Input ; Info     ; Stuck at VCC                                                                                     ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|contador_vertical:contador_vertical" ;
++-------+-------+----------+------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                          ;
++-------+-------+----------+------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                     ;
++-------+-------+----------+------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|contador_horizontal:contador_horizontal|comparador_igual:comparador_igual" ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                              ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------+
+; a[9..8] ; Input ; Info     ; Stuck at VCC                                                                                         ;
+; a[7..6] ; Input ; Info     ; Stuck at GND                                                                                         ;
+; a[4..0] ; Input ; Info     ; Stuck at GND                                                                                         ;
+; a[5]    ; Input ; Info     ; Stuck at VCC                                                                                         ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador_vga:controlador|contador_horizontal:contador_horizontal" ;
++-------+-------+----------+----------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                              ;
++-------+-------+----------+----------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                         ;
++-------+-------+----------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock25mh:clock|contador_parametrizable:divisor_clock"                                ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; reset  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Tue Nov 21 17:43:01 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proyecto -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/main.sv
+    Info (12023): Found entity 1: main File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/main_tb.sv
+    Info (12023): Found entity 1: main_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main_tb.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/ram.sv
+    Info (12023): Found entity 1: ram File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/ram.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/ram_tb.sv
+    Info (12023): Found entity 1: ram_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/ram_tb.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/rom.sv
+    Info (12023): Found entity 1: rom File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/rom.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/rom_tb.sv
+    Info (12023): Found entity 1: rom_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/rom_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/adder.sv
+    Info (12023): Found entity 1: adder File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/adder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/alu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/aluaritmetic.sv
+    Info (12023): Found entity 1: AluAritmetic File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/AluAritmetic.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/arm.sv
+    Info (12023): Found entity 1: arm File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/arm.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/condcheck.sv
+    Info (12023): Found entity 1: condcheck File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/condcheck.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/condlogic.sv
+    Info (12023): Found entity 1: condlogic File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/condlogic.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/controller.sv
+    Info (12023): Found entity 1: controller File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/datapath.sv
+    Info (12023): Found entity 1: datapath File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/decoder.sv
+    Info (12023): Found entity 1: decoder File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/decoder_tb.sv
+    Info (12023): Found entity 1: decoder_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/decoder_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/dmem.sv
+    Info (12023): Found entity 1: dmem File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/dmem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/extend.sv
+    Info (12023): Found entity 1: extend File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/extend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/extend_tb.sv
+    Info (12023): Found entity 1: extend_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/extend_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/flopenr.sv
+    Info (12023): Found entity 1: flopenr File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/flopenr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/flopr.sv
+    Info (12023): Found entity 1: flopr File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/flopr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/imem.sv
+    Info (12023): Found entity 1: imem File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/imem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/mux2.sv
+    Info (12023): Found entity 1: mux2 File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/mux2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/proce.sv
+    Info (12023): Found entity 1: Proce File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/Proce.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/proce_tb.sv
+    Info (12023): Found entity 1: Proce_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/Proce_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/regfile.sv
+    Info (12023): Found entity 1: regfile File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/regfile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/procesador/regfile_tb.sv
+    Info (12023): Found entity 1: regfile_tb File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/regfile_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/clock25mh.sv
+    Info (12023): Found entity 1: clock25mh File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/clock25mh.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/comparador_igual.sv
+    Info (12023): Found entity 1: comparador_igual File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/comparador_igual.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/comparador_mayor.sv
+    Info (12023): Found entity 1: comparador_mayor File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/comparador_mayor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/contador_direccion.sv
+    Info (12023): Found entity 1: contador_direccion File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_direccion.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/contador_horizontal.sv
+    Info (12023): Found entity 1: contador_horizontal File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_horizontal.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/contador_parametrizable.sv
+    Info (12023): Found entity 1: contador_parametrizable File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_parametrizable.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/contador_vertical.sv
+    Info (12023): Found entity 1: contador_vertical File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_vertical.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/controlador_vga.sv
+    Info (12023): Found entity 1: controlador_vga File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/mostrarimagen.sv
+    Info (12023): Found entity 1: mostrarImagen File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/mostrarImagen.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/vga/sincronizador.sv
+    Info (12023): Found entity 1: sincronizador File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/sincronizador.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/ram_display.sv
+    Info (12023): Found entity 1: ram_display File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/ram_display.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file archivos/memorias/memory_navigator.sv
+    Info (12023): Found entity 1: memory_navigator File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at main.sv(65): created implicit net for "rst" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 65
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "clock25mh" for hierarchy "clock25mh:clock" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 39
+Info (12128): Elaborating entity "contador_parametrizable" for hierarchy "clock25mh:clock|contador_parametrizable:divisor_clock" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/clock25mh.sv Line: 10
+Info (12128): Elaborating entity "controlador_vga" for hierarchy "controlador_vga:controlador" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 54
+Info (12128): Elaborating entity "contador_horizontal" for hierarchy "controlador_vga:controlador|contador_horizontal:contador_horizontal" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 26
+Info (12128): Elaborating entity "contador_parametrizable" for hierarchy "controlador_vga:controlador|contador_horizontal:contador_horizontal|contador_parametrizable:contador" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_horizontal.sv Line: 12
+Info (12128): Elaborating entity "comparador_igual" for hierarchy "controlador_vga:controlador|contador_horizontal:contador_horizontal|comparador_igual:comparador_igual" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/contador_horizontal.sv Line: 16
+Info (12128): Elaborating entity "contador_vertical" for hierarchy "controlador_vga:controlador|contador_vertical:contador_vertical" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 31
+Info (12128): Elaborating entity "sincronizador" for hierarchy "controlador_vga:controlador|sincronizador:sincronizador" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 38
+Info (12128): Elaborating entity "comparador_mayor" for hierarchy "controlador_vga:controlador|sincronizador:sincronizador|comparador_mayor:comparador_hfront_porch" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/sincronizador.sv Line: 21
+Info (12128): Elaborating entity "mostrarImagen" for hierarchy "controlador_vga:controlador|mostrarImagen:generarImagen" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 49
+Info (12128): Elaborating entity "contador_direccion" for hierarchy "controlador_vga:controlador|contador_direccion:contador" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 57
+Info (12128): Elaborating entity "rom" for hierarchy "rom:rom_image" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 59
+Warning (10858): Verilog HDL warning at rom.sv(8): object memory used but never assigned File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/rom.sv Line: 8
+Info (12128): Elaborating entity "memory_navigator" for hierarchy "memory_navigator:navigator_inst" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 68
+Info (12128): Elaborating entity "ram" for hierarchy "ram:ram_image" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 76
+Info (12128): Elaborating entity "ram_display" for hierarchy "ram:ram_image|ram_display:display_inst" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/ram.sv Line: 16
+Info (12128): Elaborating entity "Proce" for hierarchy "Proce:procesador" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 85
+Info (12128): Elaborating entity "arm" for hierarchy "Proce:procesador|arm:arm" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/Proce.sv Line: 9
+Info (12128): Elaborating entity "controller" for hierarchy "Proce:procesador|arm:arm|controller:c" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/arm.sv Line: 18
+Info (12128): Elaborating entity "decoder" for hierarchy "Proce:procesador|arm:arm|controller:c|decoder:dec" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/controller.sv Line: 17
+Info (12128): Elaborating entity "condlogic" for hierarchy "Proce:procesador|arm:arm|controller:c|condlogic:cl" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/controller.sv Line: 21
+Info (12128): Elaborating entity "flopenr" for hierarchy "Proce:procesador|arm:arm|controller:c|condlogic:cl|flopenr:flagreg1" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/condlogic.sv Line: 13
+Info (12128): Elaborating entity "condcheck" for hierarchy "Proce:procesador|arm:arm|controller:c|condlogic:cl|condcheck:cc" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/condlogic.sv Line: 18
+Info (12128): Elaborating entity "datapath" for hierarchy "Proce:procesador|arm:arm|datapath:dp" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/arm.sv Line: 22
+Info (12128): Elaborating entity "mux2" for hierarchy "Proce:procesador|arm:arm|datapath:dp|mux2:pcmux" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 20
+Info (12128): Elaborating entity "flopr" for hierarchy "Proce:procesador|arm:arm|datapath:dp|flopr:pcreg" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 21
+Info (12128): Elaborating entity "adder" for hierarchy "Proce:procesador|arm:arm|datapath:dp|adder:pcadd1" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 22
+Info (12128): Elaborating entity "mux2" for hierarchy "Proce:procesador|arm:arm|datapath:dp|mux2:ra1mux" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 26
+Info (12128): Elaborating entity "regfile" for hierarchy "Proce:procesador|arm:arm|datapath:dp|regfile:rf" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 30
+Info (12128): Elaborating entity "extend" for hierarchy "Proce:procesador|arm:arm|datapath:dp|extend:ext" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 32
+Info (12128): Elaborating entity "alu" for hierarchy "Proce:procesador|arm:arm|datapath:dp|alu:alu" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/datapath.sv Line: 36
+Info (12128): Elaborating entity "AluAritmetic" for hierarchy "Proce:procesador|arm:arm|datapath:dp|alu:alu|AluAritmetic:arithmetics" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/alu.sv Line: 22
+Info (12128): Elaborating entity "imem" for hierarchy "Proce:procesador|imem:imem" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/Proce.sv Line: 11
+Warning (10850): Verilog HDL warning at imem.sv(8): number of words (256) in memory file does not match the number of elements in the address range [0:15] File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/imem.sv Line: 8
+Warning (10030): Net "RAM.data_a" at imem.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/imem.sv Line: 4
+Warning (10030): Net "RAM.waddr_a" at imem.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/imem.sv Line: 4
+Warning (10030): Net "RAM.we_a" at imem.sv(4) has no driver or initial value, using a default initial value '0' File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/imem.sv Line: 4
+Info (12128): Elaborating entity "dmem" for hierarchy "Proce:procesador|dmem:dmem" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Procesador/Proce.sv Line: 13
+Error (12014): Net "address[31]", which fans out to "ram:ram_image|address[31]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[31]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[31]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[30]", which fans out to "ram:ram_image|address[30]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[30]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[30]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[29]", which fans out to "ram:ram_image|address[29]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[29]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[29]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[28]", which fans out to "ram:ram_image|address[28]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[28]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[28]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[27]", which fans out to "ram:ram_image|address[27]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[27]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[27]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[26]", which fans out to "ram:ram_image|address[26]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[26]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[26]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[25]", which fans out to "ram:ram_image|address[25]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[25]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[25]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[24]", which fans out to "ram:ram_image|address[24]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[24]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[24]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[23]", which fans out to "ram:ram_image|address[23]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[23]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[23]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[22]", which fans out to "ram:ram_image|address[22]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[22]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[22]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[21]", which fans out to "ram:ram_image|address[21]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[21]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[21]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[20]", which fans out to "ram:ram_image|address[20]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[20]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[20]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[19]", which fans out to "ram:ram_image|address[19]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[19]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[19]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[18]", which fans out to "ram:ram_image|address[18]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[18]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[18]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[17]", which fans out to "ram:ram_image|address[17]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[17]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[17]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[16]", which fans out to "ram:ram_image|address[16]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[16]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[16]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[15]", which fans out to "ram:ram_image|address[15]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[15]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[15]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[14]", which fans out to "ram:ram_image|address[14]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[14]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[14]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[13]", which fans out to "ram:ram_image|address[13]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[13]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[13]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[12]", which fans out to "ram:ram_image|address[12]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[12]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[12]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[11]", which fans out to "ram:ram_image|address[11]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[11]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[11]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[10]", which fans out to "ram:ram_image|address[10]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[10]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[10]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[9]", which fans out to "ram:ram_image|address[9]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[9]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[9]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[8]", which fans out to "ram:ram_image|address[8]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[8]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[8]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[7]", which fans out to "ram:ram_image|address[7]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[7]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[7]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[6]", which fans out to "ram:ram_image|address[6]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[6]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[6]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[5]", which fans out to "ram:ram_image|address[5]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[5]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[5]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[4]", which fans out to "ram:ram_image|address[4]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[4]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[4]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[3]", which fans out to "ram:ram_image|address[3]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[3]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[3]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[2]", which fans out to "ram:ram_image|address[2]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[2]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[2]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[1]", which fans out to "ram:ram_image|address[1]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[1]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[1]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Error (12014): Net "address[0]", which fans out to "ram:ram_image|address[0]", cannot be assigned more than one value File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/main.sv Line: 22
+    Error (12015): Net is fed by "controlador_vga:controlador|address[0]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/VGA/controlador_vga.sv Line: 6
+    Error (12015): Net is fed by "memory_navigator:navigator_inst|address[0]" File: C:/Users/saulg/Downloads/Proyecto temp - pruebas/Archivos/Memorias/memory_navigator.sv Line: 5
+Info (144001): Generated suppressed messages file C:/Users/saulg/Downloads/Proyecto temp - pruebas/output_files/main.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 96 errors, 7 warnings
+    Error: Peak virtual memory: 6564 megabytes
+    Error: Processing ended: Tue Nov 21 17:44:07 2023
+    Error: Elapsed time: 00:01:06
+    Error: Total CPU time (on all processors): 00:01:14
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/saulg/Downloads/Proyecto temp - pruebas/output_files/main.map.smsg.
+
+
